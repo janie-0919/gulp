@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dr.G</title>
+    <script type="text/javascript" src="../pagelist/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../pagelist/js/lib/handlebars.js"></script>
+    <link rel="stylesheet" href="../pagelist/css/style.css">
+    <script type="text/javascript" src="../pagelist/data/data.js"></script>
+</head>
+<body>
+<div class="nav">
+    <h1 class="logo">
+        <a href="#" class="link link_home "  data-file="html/home/home.html">
+            <!--      <img src="../dist/img/ alt="홈 로고">-->
+        </a>
+    </h1>
+    <a href="#" class="btn_open_depths">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+</div>
+<div class="nav_depth_2">
+    <div class="title">
+        <!--    <ul class="navi_site">-->
+        <!--      <li><a href="http://imgdomfam.s3-website.ap-northeast-2.amazonaws.com/pc-ko/dist/index.html">PC-KO</a></li>-->
+        <!--      <li><a href="http://imgdomfam.s3-website.ap-northeast-2.amazonaws.com/pc-en/dist/index.html">PC-EN</a></li>-->
+        <!--      <li><a href="http://imgdomfam.s3-website.ap-northeast-2.amazonaws.com/mobile-ko/dist/index.html" class="active">M-KO</a></li>-->
+        <!--      <li><a href="http://imgdomfam.s3-website.ap-northeast-2.amazonaws.com/mobile-en/dist/index.html">M-EN</a></li>-->
+        <!--    </ul>-->
+        <h2>Page List</h2>
+        <a href="#" class="btn_control_all close"></a>
+        <!--    <p><a href="#" class=""><i class="far fa-square"></i><i class="far fa-check-square"></i> 진척률 보기</a></p>-->
+    </div>
+    <div class="wrap_scroll">
+
+    </div>
+</div>
+<div class="content">
+    <iframe src="/pagelist/html/home/home.html" frameborder="0"></iframe>
+</div>
+
+<script id="list-template" type="text/x-handlebars-template">
+    <div class="title_page_category">
+        <h3><span>{{title}}</span> <a class="icon_dropdown close" href="#"><i class="fas fa-angle-down"></i></a></h3>
+        <div class="ing" style="display:none">
+            <span><strong class="percent">{{countCompletePercent}}%</strong></span>
+            <span><em class="circle circle_waiting" title="디자인대기">{{countWaiting}}</em></span>
+            <span><em class="circle circle_working" title="작업중">{{countWorking}}</em></span>
+            <span><em class="circle circle_complete" title="완료">{{countComplete}}</em></span>
+        </div>
+        <ul class="list_wrap close">
+            {{#each list}}
+                {{#fnStateClass}}
+                    <li>
+                        <a href="#" class="link " data-file="../dist/html/{{category}}/{{url}}.html">
+                            <span class="state {{stateClass}}">{{state}}</span><span class="depths_2_filename"> {{page}}</span>
+                            <span class="tooltip">{{url}}.html</span>
+                        </a>
+                        <a class="fas fa-external-link-alt"
+                           href="../dist/html/{{category}}/{{url}}.html" target="_blank"
+                           title="새창으로 보기">
+                        </a>
+                    </li>
+                {{else}}
+                    <li>
+                <span class="unlink " data-file="">
+                    <span class="state {{stateClass}}">{{state}}</span><span class="depths_2_filename"> {{page}}</span>
+                    <span class="tooltip">{{url}}.html</span>
+                </span>
+                    </li>
+                {{/fnStateClass}}
+            {{/each}}
+        </ul>
+    </div>
+</script>
+<script>
+    Handlebars.registerHelper('fnStateClass', function (options) {
+        // console.log(options)
+        // if (options.data.root.list[options.data.index].stateClass == 'waiting') {
+        if (options.data.root.list[options.data.index].stateClass == 'disabled') {
+            return options.inverse(this)
+        } else {
+            return options.fn(this)
+        }
+    })
+
+    function countState() {
+        for(var index in data) {
+            // console.log(data[index]);
+            var list = data[index].list;
+            var countWaiting = 0;
+            var countWorking = 0;
+            var countComplete = 0;
+            for(var key in list) {
+                // console.log(list[key])
+                if (list[key].stateClass == "waiting") {
+                    countWaiting++;
+                }
+                if (list[key].stateClass == "working") {
+                    countWorking++;
+                }
+                if (list[key].stateClass == "complete") {
+                    countComplete++;
+                }
+            }
+            data[index].countWaiting = countWaiting;
+            data[index].countWorking = countWorking;
+            data[index].countComplete = countComplete;
+
+            data[index].countCompletePercent =  Math.floor (countComplete/ (countWaiting+countWorking+countComplete) *100)
+
+        }
+    }
+
+    countState();
+    // var source = document.getElementById("entry-template").innerHTML; //js
+    var source = $('#list-template').html() //jQuery
+    var template = Handlebars.compile(source) //컴파일
+    $('.wrap_scroll')
+        .append(template(data.guide))
+</script>
+<script>
+    $('.link').on('click', function () {
+        var filename = $(this).data('file');
+        $('iframe').attr('src', filename);
+    })
+    $('.title_page_category .link').on('click', function () {
+        $('.title_page_category .link').removeClass('focus')
+        if ($(this).hasClass('focus')) {
+            $(this).removeClass('focus')
+        } else {
+            $(this).addClass('focus')
+        }
+    })
+    $('.nav .btn_open_depths').on('click', function () {
+        if ($(this).hasClass('close')) {
+            $(this).removeClass('close')
+            $(this).children('i').attr('class', 'fas fa-chevron-left')
+        } else {
+            $(this).addClass('close')
+            $(this).children('i').attr('class', 'fas fa-chevron-right')
+        }
+        if ($('.nav_depth_2').hasClass('close')) {
+            $('.nav_depth_2').removeClass('close')
+        } else {
+            $('.nav_depth_2').addClass('close')
+        }
+    })
+
+
+    $('.icon_dropdown')
+        .on('click', function () {
+            if ($(this).parent().siblings('.list_wrap').hasClass('close')) {
+                $(this).removeClass('close')
+                $(this).children('i').attr('class', 'fas fa-angle-up')
+                $(this).parent().siblings('.list_wrap').removeClass('close')
+            } else {
+                $(this).addClass('close')
+                $(this).children('i').attr('class', 'fas fa-angle-down')
+                $(this).parent().siblings('.list_wrap').addClass('close')
+            }
+        })
+
+
+    var $navDepth2 = $('.nav_depth_2')
+
+    $navDepth2.on('click', '.title p a', function () {
+        if ($(this).hasClass('checked')) {
+            $(this).removeClass('checked')
+            $('.ing').hide()
+        } else {
+            $(this).addClass('checked')
+            $('.ing').show()
+        }
+    })
+    $navDepth2.on('click', '.btn_control_all', function () {
+        if ($(this).hasClass('close')) {
+            $(this).removeClass('close')
+            $('.list_wrap , .icon_dropdown').removeClass('close')
+        } else {
+            $(this).addClass('close')
+            $('.list_wrap , .icon_dropdown').addClass('close')
+        }
+    })
+
+    var sum = 0
+    var comp = 0
+    $.each(data, function (key, data) {
+        // console.log(data.list.length);
+        sum = sum + data.list.length
+        $.each(data.list, function (key, data) {
+            if (data.stateClass == 'complete') {
+                comp++
+            }
+        })
+    })
+    // sum = sum - 20;
+    var total = (comp / sum) * 100
+    $('.nav_depth_2 .title h2').html('Dr.G / v.0.1')
+    // .html('페이지 목록 : 완료' + total.toFixed(0) + '%')
+</script>
+</body>
+</html>

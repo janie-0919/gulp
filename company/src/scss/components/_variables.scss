@@ -1,0 +1,47 @@
+/*
+|----------------------------------|
+ v.0.1 주연 : 최초 작업 -- 2021.11.30
+|----------------------------------|
+*/
+/* point */
+$primary: #2FCAB0;
+$blue: #47BDFF;
+$violet: #6170FF;
+$yellow: #FFE665;
+
+/* variant */
+$primary-light: #D5F4EF;
+$blue-light: #DAF2FF;
+$blue-violet: #DFE2FF;
+
+/* gray */
+$gray-900: #222222;
+$gray-800: #444444;
+$gray-700: #666666;
+$gray-600: #888888;
+$gray-500: #bbbbbb;
+$gray-400: #dddddd;
+$gray-300: #eeeeee;
+$gray-200: #f8f8f8;
+$gray-fff: #ffffff;
+
+/* error */
+$error: #EF4C57;
+
+/* fonts */
+$font: "Noto Sans KR";
+$poppins-regular: 'Poppins-Regular';
+$poppins-medium: 'Poppins-Medium';
+$poppins-semiBold: 'Poppins-SemiBold';
+
+$font-family : "Noto Sans KR";
+$font-family-bold : "Noto Sans KR";
+$font-family-base : "Noto Sans KR" !default;
+$font-family-sans-serif: $font-family-base, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+/* modal */
+$modal-backdrop-opacity:            .5;
+$modal-sm:                          300px;
+$modal-md:                          500px;
+$modal-lg:                          1000px;
+$modal-xl:                          1140px;

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+@@include('../../html/include/common/head.html')
+<body>
+<div class="sample">
+    <!-- s 테스트 1번 -->
+    <div class="video">
+        <video id="video" autoplay="autoplay" muted="muted">
+            <source src="../../img/@temp/sample.mp4" type="video/mp4">
+        </video>
+        <div class="title">누구나<br/>피부를 건강하게</div>
+        <div class="sub-title">내 피부를 위한 화장품을 잘 알고 있나요?</div>
+    </div>
+    <script>
+        document.getElementById('video').play();
+    </script>
+    <!-- s 테스트 1번 -->
+
+    <!-- s 테스트 2번 -->
+    <!-- todo! @박선미 -->
+    <!-- e 테스트 2번 -->
+
+    <!-- s 테스트 3번 -->
+    <div class="color-test">
+        <div class="svg">
+            <ul class="numbering">
+                <li class="active" style="color:#444444">01</li>
+                <li>02</li>
+                <li>03</li>
+            </ul>
+            <svg width="375" height="498" viewBox="0 0 375 498" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="375" height="498">
+                    <rect width="375" height="498" fill="#C4C4C4"/>
+                </mask>
+                <g mask="url(#mask)">
+                    <circle cx="187" cy="103" r="276" fill="#2FCAB0" fill-opacity="0.1" stroke="#2FCAB0" stroke-width="90"/>
+                </g>
+            </svg>
+            <div class="img"><img src="../../img/@temp/sample-product.png" alt="진정 강한 병풀 바이옴 시카 수딩 크림"></div>
+            <div class="title">진정 강한 병풀 바이옴<br/>시카 수딩 크림</div>
+            <div class="btn" style="background-color: #2FCAB0">SHOP</div>
+        </div>
+    </div>
+    <!-- e 테스트 3번 -->
+
+    <!-- s 테스트 4번 -->
+    <a href="#" id="chatbot" class="btn-chatbot"><img src="../../img/@temp/chatbot.png" alt="chatbot"></a>
+    <script>
+        $('#chatbot').draggable({
+            drag: function() {
+                var offset = $(this).offset();
+                var xPos = offset.left;
+                var yPos = offset.top;
+                console.log('x :', xPos)
+                console.log('y :', yPos)
+            }
+        });
+    </script>
+    <!-- e 테스트 4번 -->
+</div>
+</body>
+</html>

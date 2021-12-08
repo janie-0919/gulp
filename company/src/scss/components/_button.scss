@@ -1,0 +1,78 @@
+/*
+|----------------------------------|
+ v.0.1 주연 : 최초 작업 -- 2021.11.30
+|----------------------------------|
+*/
+@import "variables";
+
+.btn {
+  display: inline-block;
+  min-width: 132px;
+  height: 48px;
+  line-height: 46px;
+  padding: 0 16px;
+  background-color: $primary;
+  border-color: $primary;
+  border-radius: 100px;
+  font-weight: bold;
+  font-size: 13px;
+  color: $gray-fff;
+
+  &:focus, &:hover {
+    color: $gray-fff;
+  }
+
+  &.btn-black {
+    background-color: $gray-800;
+    border-color: $gray-800;
+  }
+
+  &.btn-white {
+    background-color: $gray-fff;
+    border-color: $gray-fff;
+    color: $gray-800;
+  }
+
+  &.disabled {
+    background-color: $gray-400;
+    border-color: $gray-400;
+  }
+
+  &.btn-sm {
+    //min-width: 113px;
+    height: 32px;
+    line-height: 30px;
+  }
+
+  &.btn-lg {
+    //min-width: 179px;
+    height: 56px;
+    line-height: 54px;
+  }
+
+  &.btn-xl {
+    height: 62px;
+    line-height: 60px;
+  }
+}
+
+.page-btn-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  .btn-page {
+    i {
+      + span {
+        margin-left: 6px;
+      }
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+
+      + i {
+        margin-left: 6px;
+      }
+    }
+  }
+}

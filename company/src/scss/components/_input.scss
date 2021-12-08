@@ -1,0 +1,178 @@
+/*
+|----------------------------------|
+ v.0.1 주연 : 최초 작업 -- 2021.11.30
+ v.0.2 선미 : 불필요 css 제거 및 checkbox,radio 추가 -- 2021.12.07
+|----------------------------------|
+*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom-switch {
+  padding-left: 40px;
+
+  .custom-control-input {
+    width: 40px;
+    height: 24px;
+  }
+
+  .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+    background-color: $gray-500;
+    border-color: $gray-500;
+  }
+  .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+    background-color: $gray-500;
+    border-color: $gray-500;
+  }
+  .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: none;
+  }
+  .custom-control-label::before {
+    background-color: $gray-500;
+    border-color: $gray-500;
+    width: 2.5rem;
+    height: 1.5rem;
+    border-radius: 100px;
+    left: -40px;
+    top: 0;
+  }
+  .custom-control-label::after {
+    background-color: $gray-fff;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    top: 3px;
+    left: -37px;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: $primary;
+    border-color: $primary;
+  }
+  .custom-control-input:checked ~ .custom-control-label::after {
+    transform: translateX(1rem);
+  }
+  .custom-control-input[disabled] ~ .custom-control-label::before, .custom-control-input:disabled ~ .custom-control-label::before {
+    background-color: $gray-500;
+    border-color: $gray-500;
+  }
+}
+.custom-checkbox{ display: inline-block;
+  .custom-control-input{
+    width: 24px;
+    height: 24px;
+  }
+  .custom-control-label::before{
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    top: 0;
+    border:2px solid #dddddd;
+  }
+  .custom-control-label::after{
+    width: 24px;
+    height: 24px;
+    top: 0;
+  }
+  .custom-control-input:focus ~ .custom-control-label::before{
+    box-shadow: none;
+  }
+  .custom-control-input:focus:not(:checked) ~ .custom-control-label::before{
+    border-color: #dddddd;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before{
+    background-color: $primary;
+    border-color: $primary;
+  }
+  .custom-control-input:checked ~ .custom-control-label::after{
+    background: url("../img/common/check.png") no-repeat center center;
+  }
+  .custom-control-input[disabled] ~ .custom-control-label::before, .custom-control-input:disabled ~ .custom-control-label::before{
+    background: #bbbbbb;
+    border:2px solid #bbbbbb
+  }
+  .custom-control-input[disabled] ~ .custom-control-label::after, .custom-control-input:disabled ~ .custom-control-label::after{
+    background: url("../img/common/check-disabled.png") no-repeat center center;
+  }
+
+  &.checkbox-sm{
+    .custom-control-input{
+      width: 20px;
+      height: 20px;
+    }
+    .custom-control-label::before{
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+    }
+    .custom-control-label::after{
+      width: 20px;
+      height: 20px;
+    }
+    .custom-control-input:checked ~ .custom-control-label::after{
+      background: url("../img/common/check-sm.png") no-repeat center center;
+    }
+    .custom-control-input[disabled] ~ .custom-control-label::after, .custom-control-input:disabled ~ .custom-control-label::after{
+      background: url("../img/common/check-disabled-sm.png") no-repeat center center;
+    }
+  }
+}
+.custom-radio{ display: inline-block;
+  .custom-control-input{
+    width: 24px;
+    height: 24px;
+  }
+  .custom-control-label::before{
+    border: 2px solid #dddddd;
+    width: 24px;
+    height: 24px;
+    top: 0;
+  }
+  .custom-control-label::after{
+    width: 24px;
+    height: 24px;
+    top: 0;
+  }
+  .custom-control-input:focus ~ .custom-control-label::before{
+    box-shadow: none;
+  }
+  .custom-control-input:focus:not(:checked) ~ .custom-control-label::before{
+    border-color: #dddddd;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before{
+    background-color: $primary;
+    border:2px solid $primary;
+  }
+  .custom-control-input:checked ~ .custom-control-label::after{
+    background: url("../img/common/radio.png") no-repeat center center;
+  }
+  .custom-control-input[disabled] ~ .custom-control-label::before, .custom-control-input:disabled ~ .custom-control-label::before{
+    background-color: #bbbbbb;
+    border:2px solid #bbbbbb;
+  }
+  .custom-control-input[disabled] ~ .custom-control-label::after, .custom-control-input:disabled ~ .custom-control-label::after{
+    background: url("../img/common/radio-disabled.png") no-repeat center center;
+  }
+
+ &.radio-sm{
+   .custom-control-input{
+     width: 20px;
+     height: 20px;
+   }
+   .custom-control-label::before{
+     width: 20px;
+     height: 20px;
+   }
+   .custom-control-label::after{
+     width: 20px;
+     height: 20px;
+   }
+   .custom-control-input:checked ~ .custom-control-label::after{
+     background: url("../img/common/radio-sm.png") no-repeat center center;
+   }
+   .custom-control-input[disabled] ~ .custom-control-label::after, .custom-control-input:disabled ~ .custom-control-label::after{
+     background: url("../img/common/radio-disabled-sm.png") no-repeat center center;
+   }
+ }
+}

@@ -1,0 +1,144 @@
+/*
+|------------------------------------|
+ v.0.1 주연 : 최초 작업 -- 2021.11.29
+|------------------------------------|
+*/
+.sample {
+  .video {
+    position: relative;
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+
+    .title {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      font-size: 40px;
+      color: #fff;
+    }
+
+    .sub-title {
+      position: absolute;
+      left: 20px;
+      top: 152px;
+      font-size: 16px;
+      line-height: 20px;
+      color: #fff;
+    }
+  }
+
+  .color-test {
+    margin-top: -6px;
+
+    .numbering {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 90px;
+
+      li {
+        position: relative;
+        display: flex;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 22px;
+        letter-spacing: -0.005em;
+        margin-right: 17px;
+        color: #444;
+        opacity: .3;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.active {
+          font-weight: bold;
+          opacity: 1;
+        }
+
+        + li {
+          &::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            width: 1px;
+            height: 12px;
+            top: 5px;
+            background-color: #BBBBBB;
+          }
+        }
+      }
+    }
+
+    .svg {
+      position: relative;
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
+
+      .img {
+        position: absolute;
+        width: 270px;
+        height: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 99px;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .title {
+        position: absolute;
+        padding: 0 24px;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: -2px;
+        color: #222222;
+        top: 482px;
+        left: 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0 16px;
+        position: absolute;
+        height: 40px;
+        line-height: 40px;
+        right: 24px;
+        top: 535px;
+        background: #2FCAB0;
+        border-radius: 100px;
+        color: #fff;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .btn-chatbot {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    z-index: 10;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

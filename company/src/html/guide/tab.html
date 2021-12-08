@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+@@include('../../html/include/common/head.html')
+<body>
+<div class="wrap">
+    <div class="container">
+        <div class="guide">
+            <div class="box">
+                <div class="tab _tab">
+                    <ul class="clearfix">
+                        <li class="item active"><a href="#">ABOUT</a></li>
+                        <li class="item"><a href="#">PROCESS</a></li>
+                        <li class="item"><a href="#">ANSWER</a></li>
+                        <li class="item"><a href="#">VOC</a></li>
+                        <li class="item"><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                var sum = 0;
+                var tabItem = $('._tab .item a');
+
+                setTimeout(function () {
+                    tabItem.each(function () {
+                        sum = sum + $(this).outerWidth(true) + 48;
+                    });
+                    $('._tab ul').css('width', sum + 'px');
+                }, 100);
+
+                tabItem.on('click', function () {
+                    $(this).parents().addClass('active').siblings().removeClass('active');
+                })
+            })
+        </script>
+    </div>
+    @@include('../../html/include/common/footer.html')
+</div>
+</body>
+</html>

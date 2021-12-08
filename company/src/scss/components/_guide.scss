@@ -1,0 +1,182 @@
+/*
+|----------------------------------|
+ v.0.1 주연 : 최초 작업 -- 2021.11.2
+|----------------------------------|
+*/
+.guide {
+  padding: 30px;
+
+  &.typography {
+    .title-lg {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 25px;
+      margin-bottom: 20px;
+    }
+
+    .title-sm {
+      font-family: $poppins-semiBold;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 36px;
+      color: #000000;
+    }
+
+    .title-xl {
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 70px;
+      text-align: center;
+      letter-spacing: -0.01em;
+      color: #222222;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      margin-bottom: 60px;
+
+      &.box-sm {
+        .d-flex {
+          margin-right: 20px;
+
+          p {
+            margin-right: 20px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .d-flex.justify-content-center {
+        p {
+          display: inline-block;
+          font-size: 16px;
+          line-height: 23px;
+
+          + p {
+            margin-left: 20px;
+          }
+        }
+      }
+
+      .font-sm {
+        font-size: 14px;
+        line-height: 28px;
+        text-transform: uppercase;
+        color: #999999;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &.color-palette {
+    .title {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 23px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .box {
+      margin-bottom: 70px;
+      overflow: hidden;
+
+      .item {
+        float: left;
+        width: 145px;
+        margin-right: 15px;
+        overflow: hidden;
+        border: 1px solid $gray-300;
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .color {
+          width: 100%;
+          height: 100px;
+          border-bottom: 1px solid $gray-300;
+        }
+
+        .info {
+          padding: 15px;
+
+          .tit {
+            display: block;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 5px;
+            color: #909090;
+          }
+
+          .val {
+            display: block;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 21px;
+            color: #000000;
+          }
+        }
+
+        &.item-lg {
+          width: 305px;
+        }
+      }
+    }
+  }
+
+  &.grid {
+    padding: 0 20px;
+
+    .col {
+      > div {
+        height: 2609px;
+        background: rgba(255, 0, 0, 0.06);
+        border: 1px solid rgba(255, 0, 0, 0.1);
+      }
+    }
+  }
+
+  &.input {
+    > .title {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 23px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+  }
+
+  &.guide-list {
+    padding: 0;
+
+    .title {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 23px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+  }
+
+  >.box{
+    padding: 30px;
+    border-radius: 10px;
+    border:1px solid #d9d9d9;
+    margin-bottom: 50px;
+  }
+}

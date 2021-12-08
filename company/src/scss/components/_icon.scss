@@ -1,0 +1,69 @@
+/*
+|----------------------------------|
+ v.0.1 주연 : 최초 작업 -- 2021.11.30
+|----------------------------------|
+*/
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-indent: -999em;
+  overflow: hidden;
+}
+
+.ico-prev {
+  @include background-img ($width: 12px, $height: 12px, $category: 'common', $img: 'ico-prev.png');
+}
+
+.ico-next {
+  @include background-img ($width: 12px, $height: 12px, $category: 'common', $img: 'ico-next.png');
+}
+
+.ico-alert {
+  @include background-img ($width: 24px, $height: 24px, $category: 'common', $img: 'ico-alert.png');
+
+  &.white {
+    background-image: url(../img/common/ico-alert-white.png);
+  }
+}
+
+.ico-nav-menu-shop {
+  @include background-img ($width: 24px, $height: 24px, $category: 'common', $img: 'nav-menu-shop.png');
+}
+
+.ico-accordion {
+  @include background-img ($width: 24px, $height: 24px, $category: 'common', $img: 'ico-accordion-open.png');
+
+  &.ico-accordion-close {
+    background-image: url(../img/common/ico-accordion-close.png);
+  }
+}
+
+.ico-accordion-close {
+  @include background-img ($width: 24px, $height: 24px, $category: 'common', $img: 'ico-accordion-open.png');
+}
+
+.ico-close {
+  @include background-img ($width: 24px, $height: 24px, $category: 'common', $img: 'ico-close.png');
+
+  &.white {
+    background-image: url(../img/common/ico-close-white.png);
+  }
+}
+
+.ico-nav-prev {
+  @include background-img ($width: 24px, $height: 24px, $category: 'common', $img: 'ico-nav-prev.png');
+}
+
+.ico-nav-next {
+  @include background-img ($width: 24px, $height: 24px, $category: 'common', $img: 'ico-nav-next.png');
+}
+
+.ico-search {
+  @include background-img ($width: 24px, $height: 24px, $category: 'common', $img: 'ico-search.png');
+}
+
+.ico-remove {
+  @include background-img ($width: 24px, $height: 24px, $category: 'common', $img: 'ico-remove.png');
+}

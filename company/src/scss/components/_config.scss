@@ -1,0 +1,29 @@
+/*
+|----------------------------------|
+ v.0.1 주연 : 최초 작업 -- 2021.08.31
+|----------------------------------|
+*/
+
+@mixin ellipsis($line: 1) {
+  overflow: hidden;
+
+  @if $line==1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  @else {
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin background-img ($width: 100px, $height: 100px, $category: 'common', $img: 'temp.svg'){
+  $url : "../img/";
+  width: $width;
+  height: $height;
+  background-image: url($url + $category + "/" + $img);
+  background-size: cover;
+}

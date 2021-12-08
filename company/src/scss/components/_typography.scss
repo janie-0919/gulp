@@ -1,0 +1,72 @@
+/*
+|----------------------------------|
+ v.0.1 주연 : 최초 작업 -- 2021.11.2
+|----------------------------------|
+*/
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-poppins {
+  font-family: $poppins-regular;
+}
+
+.font-poppins-medium {
+  font-family: $poppins-medium;
+}
+
+.font-poppins-semiBold {
+  font-family: $poppins-semiBold;
+}
+
+.font-h1 {
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: -0.01em;
+}
+
+.font-h2 {
+  font-size: 28px;
+  line-height: 39px;
+  letter-spacing: -0.005em;
+}
+
+.font-h3 {
+  font-size: 22px;
+  line-height: 33px;
+  letter-spacing: -0.005em;
+}
+
+.font-h4 {
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.005em;
+}
+
+.font-h5 {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.005em;
+}
+
+.font-h6 {
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: -0.005em;
+}
+
+.font-body-1 {
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: -0.005em;
+}
+
+.font-body-2 {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.005em;
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+@@include('../../html/include/common/head.html')
+<body>
+<style>
+    .box {
+        border: 1px solid #d9d9d9;
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+
+    .box > div {
+        margin-bottom: 20px;
+    }
+
+    .container .box:last-child {
+        margin-bottom: 0
+    }
+
+    .container .box div {
+        margin-bottom: 20px
+    }
+
+    .container .box div:last-child {
+        margin-bottom: 0
+    }
+
+    .container .box p {
+        margin-bottom: 20px
+    }
+</style>
+<div class="wrap">
+    <div class="guide">
+        <div class="box" style="background-color: #dddddd;">
+            <p class="font-h6 mb-5">Icons</p>
+            <div>
+                <i class="icon ico-alert"></i>
+                <i class="icon ico-alert white"></i>
+                <i class="icon ico-nav-menu-shop"></i>
+                <i class="icon ico-close"></i>
+                <i class="icon ico-close white"></i>
+                <i class="icon ico-accordion"></i>
+                <i class="icon ico-accordion ico-accordion-close"></i>
+                <i class="icon ico-nav-prev"></i>
+                <i class="icon ico-nav-next"></i>
+                <i class="icon ico-prev"></i>
+                <i class="icon ico-next"></i>
+                <i class="icon ico-remove"></i>
+                <i class="icon ico-search"></i>
+                <img src="../../img/common/m-logo-black.png" width="50" alt="Dr.G">
+                <img src="../../img/common/img-AI-symbol.png" width="100" alt="">
+            </div>
+        </div>
+    </div>
+    @@include('../../html/include/common/footer.html')
+</div>
+</body>
+</html>

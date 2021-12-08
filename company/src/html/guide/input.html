@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+@@include('../../html/include/common/head.html')
+<body>
+<div class="wrap">
+    <div class="container">
+        <div class="guide input">
+            <div class="font-h2">Input</div>
+            <div class="box">
+                <div class="custom-control custom-switch mb-2">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                    <label class="custom-control-label" for="customSwitch1"></label>
+                    Toggle
+                </div>
+                <div class="custom-control custom-switch mb-2">
+                    <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
+                    <label class="custom-control-label" for="customSwitch2"></label>
+                    disabled
+                </div>
+            </div>
+            <div class="box row">
+
+                <div class="col-4">
+                    <div class="font-h5">Empty</div>
+                    <div class="custom-control custom-checkbox m-2">
+                        <input type="checkbox" class="custom-control-input" id="checkbox01">
+                        <label class="custom-control-label" for="checkbox01"></label>
+                    </div>
+                    <div class="custom-control custom-checkbox checkbox-sm m-2">
+                        <input type="checkbox" class="custom-control-input" id="checkbox02">
+                        <label class="custom-control-label" for="checkbox02"></label>
+                    </div>
+                    <div class="custom-control custom-radio m-2">
+                        <input type="radio" class="custom-control-input" name="radioGuide" id="radio01">
+                        <label class="custom-control-label" for="radio01"></label>
+                    </div>
+                    <div class="custom-control custom-radio radio-sm m-2">
+                        <input type="radio" class="custom-control-input" name="radioGuide" id="radio02">
+                        <label class="custom-control-label" for="radio02"></label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="font-h5">Check</div>
+                    <div class="custom-control custom-checkbox m-2">
+                        <input type="checkbox" class="custom-control-input" id="checkbox03" checked>
+                        <label class="custom-control-label" for="checkbox03"></label>
+                    </div>
+                    <div class="custom-control custom-checkbox checkbox-sm m-2">
+                        <input type="checkbox" class="custom-control-input" id="checkbox04" checked>
+                        <label class="custom-control-label" for="checkbox04"></label>
+                    </div>
+                    <div class="custom-control custom-radio m-2">
+                        <input type="radio" class="custom-control-input" id="radio03" checked>
+                        <label class="custom-control-label" for="radio03"></label>
+                    </div>
+                    <div class="custom-control custom-radio radio-sm m-2">
+                        <input type="radio" class="custom-control-input" id="radio04" checked>
+                        <label class="custom-control-label" for="radio04"></label>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="font-h5">Disable</div>
+                    <div class="custom-control custom-checkbox m-2">
+                        <input type="checkbox" class="custom-control-input" id="checkbox05" disabled>
+                        <label class="custom-control-label" for="checkbox05"></label>
+                    </div>
+                    <div class="custom-control custom-checkbox checkbox-sm m-2">
+                        <input type="checkbox" class="custom-control-input" id="checkbox06" disabled>
+                        <label class="custom-control-label" for="checkbox06"></label>
+                    </div>
+                    <div class="custom-control custom-radio m-2">
+                        <input type="radio" class="custom-control-input" name="radioGuide" id="radio05" disabled>
+                        <label class="custom-control-label" for="radio05"></label>
+                    </div>
+                    <div class="custom-control custom-radio radio-sm m-2">
+                        <input type="radio" class="custom-control-input" name="radioGuide" id="radio06" disabled>
+                        <label class="custom-control-label" for="radio06"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('../../html/include/common/footer.html')
+</div>
+</body>
+</html>
